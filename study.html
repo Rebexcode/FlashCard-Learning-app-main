@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study - CS Flashcards</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/study.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🧠</span>
+                <span class="brand-text">CS Flashcards</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study.html" class="nav-link active">Study</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="manage-cards.html" class="nav-link">Manage Cards</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Study Header -->
+    <section class="study-header">
+        <div class="container">
+            <div class="study-header-content">
+                <h1>Study Session</h1>
+                <p>Master computer science concepts one card at a time</p>
+            </div>
+            <div class="study-controls">
+                <div class="session-info">
+                    <span class="session-label">Session Progress</span>
+                    <span class="session-stats" id="sessionStats">0 / 20 cards</span>
+                </div>
+                <button class="btn btn-secondary" id="settingsBtn">⚙️ Settings</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Content -->
+    <main class="study-main">
+        <div class="container">
+            <!-- Category Filter -->
+            <div class="study-filters">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">All Topics</option>
+                        <option value="algorithms">Algorithms</option>
+                        <option value="data-structures">Data Structures</option>
+                        <option value="programming">Programming</option>
+                        <option value="systems">Systems</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="database-systems">Database Systems</option>
+                        <option value="security-crypto">Security & Cryptography</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Difficulty:</label>
+                    <select id="difficultyFilter" class="filter-select">
+                        <option value="all">All Levels</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Study Mode:</label>
+                    <select id="studyMode" class="filter-select">
+                        <option value="sequential">Sequential</option>
+                        <option value="random">Random</option>
+                        <option value="spaced">Spaced Repetition</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-info">
+                    <span class="progress-text" id="progressText">0% Complete</span>
+                    <span class="time-elapsed" id="timeElapsed">00:00</span>
+                </div>
+            </div>
+
+            <!-- Flashcard -->
+            <div class="flashcard-section">
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="card-header">
+                                    <span class="card-category" id="cardCategory">Algorithm</span>
+                                    <span class="card-difficulty" id="cardDifficulty">Medium</span>
+                                </div>
+                                <div class="card-content">
+                                    <h2 class="card-question" id="cardQuestion">What is the time complexity of binary
+                                        search?</h2>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="flip-btn" id="flipBtn">
+                                        <span>Show Answer</span>
+                                        <span class="flip-icon">🔄</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="card-header">
+                                    <span class="card-category" id="cardCategoryBack">Algorithm</span>
+                                    <span class="card-difficulty" id="cardDifficultyBack">Medium</span>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="answer-label">Answer:</h3>
+                                    <p class="card-answer" id="cardAnswer">O(log n) - Binary search eliminates half of
+                                        the remaining elements in each step.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button class="flip-btn" id="flipBackBtn">
+                                        <span>Show Question</span>
+                                        <span class="flip-icon">🔄</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="navigation-controls">
+                    <button class="nav-btn" id="prevBtn" disabled>
+                        <span class="nav-icon">←</span>
+                        Previous
+                    </button>
+
+                    <div class="difficulty-feedback">
+                        <button class="feedback-btn easy" id="easyBtn">
+                            <span class="feedback-icon">😊</span>
+                            Easy
+                        </button>
+                        <button class="feedback-btn medium" id="mediumBtn">
+                            <span class="feedback-icon">🤔</span>
+                            Medium
+                        </button>
+                        <button class="feedback-btn hard" id="hardBtn">
+                            <span class="feedback-icon">😅</span>
+                            Hard
+                        </button>
+                    </div>
+
+                    <button class="nav-btn" id="nextBtn">
+                        Next
+                        <span class="nav-icon">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Study Stats -->
+            <div class="study-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="studiedCount">0</div>
+                    <div class="stat-description">Cards Studied</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="correctCount">0</div>
+                    <div class="stat-description">Correct</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="streakCount">0</div>
+                    <div class="stat-description">Current Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="accuracyRate">0%</div>
+                    <div class="stat-description">Accuracy</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Study Settings</h3>
+                <button class="modal-close" id="closeSettings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label>Auto-advance after feedback:</label>
+                    <input type="checkbox" id="autoAdvance" checked>
+                </div>
+                <div class="setting-group">
+                    <label>Show hints:</label>
+                    <input type="checkbox" id="showHints">
+                </div>
+                <div class="setting-group">
+                    <label>Cards per session:</label>
+                    <select id="cardsPerSession">
+                        <option value="10">10 cards</option>
+                        <option value="20" selected>20 cards</option>
+                        <option value="50">50 cards</option>
+                        <option value="all">All cards</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="brand-icon">🧠</span>
+                        <span class="brand-text">CS Flashcards</span>
+                    </div>
+                    <p>Empowering computer science students with effective learning tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="study.html">Start Studying</a></li>
+                        <li><a href="categories.html">Browse Categories</a></li>
+                        <li><a href="progress.html">Track Progress</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="categories.html#algorithms">Algorithms</a></li>
+                        <li><a href="categories.html#data-structures">Data Structures</a></li>
+                        <li><a href="categories.html#programming">Programming</a></li>
+                        <li><a href="categories.html#systems">Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">GitHub</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CS Flashcards. All rights reserved. Built for students, by students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/flashcards-data.js"></script>
+    <script src="js/flashcard-manager.js"></script>
+    <script src="js/study.js"></script>
+</body>
+
+</html>

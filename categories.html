@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - CS Flashcards</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/categories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🧠</span>
+                <span class="brand-text">CS Flashcards</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study.html" class="nav-link">Study</a>
+                <a href="categories.html" class="nav-link active">Categories</a>
+                <a href="manage-cards.html" class="nav-link">Manage Cards</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Categories Header -->
+    <section class="categories-header">
+        <div class="container">
+            <h1>Study Categories</h1>
+            <p>Choose your focus area and start mastering computer science concepts</p>
+        </div>
+    </section>
+
+    <!-- Categories Content -->
+    <main class="categories-main">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="categories-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search categories or topics...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="filter-controls">
+                    <select id="difficultyFilter">
+                        <option value="all">All Difficulties</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <select id="sortBy">
+                        <option value="name">Sort by Name</option>
+                        <option value="cards">Sort by Card Count</option>
+                        <option value="difficulty">Sort by Difficulty</option>
+                    </select>
+                    <button class="btn btn-primary create-category-btn" id="createCategoryBtn">
+                        <span>➕</span> Create Category
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="brand-icon">🧠</span>
+                        <span class="brand-text">CS Flashcards</span>
+                    </div>
+                    <p>Empowering computer science students with effective learning tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="study.html">Start Studying</a></li>
+                        <li><a href="categories.html">Browse Categories</a></li>
+                        <li><a href="progress.html">Track Progress</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="categories.html#algorithms">Algorithms</a></li>
+                        <li><a href="categories.html#data-structures">Data Structures</a></li>
+                        <li><a href="categories.html#programming">Programming</a></li>
+                        <li><a href="categories.html#systems">Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">GitHub</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CS Flashcards. All rights reserved. Built for students, by students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/flashcards-data.js"></script>
+    <script src="js/flashcard-manager.js"></script>
+    <script src="js/categories.js"></script>
+</body>
+
+</html>

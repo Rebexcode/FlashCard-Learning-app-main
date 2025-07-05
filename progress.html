@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - CS Flashcards</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/progress.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🧠</span>
+                <span class="brand-text">CS Flashcards</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="study.html" class="nav-link">Study</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="manage-cards.html" class="nav-link">Manage Cards</a>
+                <a href="progress.html" class="nav-link active">Progress</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Header -->
+    <section class="progress-header">
+        <div class="container">
+            <h1>Your Learning Progress</h1>
+            <p>Track your journey and celebrate your achievements</p>
+        </div>
+    </section>
+
+    <!-- Progress Content -->
+    <main class="progress-main">
+        <div class="container">
+            <!-- Overview Stats -->
+            <div class="overview-stats">
+                <div class="stat-card primary">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="totalStudied">0</div>
+                        <div class="stat-label">Cards Studied</div>
+                    </div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="totalCorrect">0</div>
+                        <div class="stat-label">Correct Answers</div>
+                    </div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="currentStreak">0</div>
+                        <div class="stat-label">Current Streak</div>
+                    </div>
+                </div>
+                <div class="stat-card info">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="studyTime">0h</div>
+                        <div class="stat-label">Study Time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Charts -->
+            <div class="progress-charts">
+                <div class="chart-card">
+                    <h3>Category Progress</h3>
+                    <div class="category-progress" id="categoryProgress">
+                        <!-- Progress bars will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="chart-card activity-card">
+                    <div class="activity-header">
+                        <div class="activity-title-section">
+                            <h3>Study Activity</h3>
+                            <p class="activity-subtitle" id="activitySubtitle">Track your daily learning habits</p>
+                        </div>
+                        <div class="activity-controls">
+                            <select id="activityPeriod" class="activity-select">
+                                <option value="2weeks">Last 2 Weeks</option>
+                                <option value="month" selected>Last Month</option>
+                                <option value="3months">Last 3 Months</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="activity-stats">
+                        <div class="activity-stat">
+                            <span class="stat-value" id="weeklyAverage">0</span>
+                            <span class="stat-label">Daily Average</span>
+                        </div>
+                        <div class="activity-stat">
+                            <span class="stat-value" id="dayStreak">0</span>
+                            <span class="stat-label">Day Streak</span>
+                        </div>
+                        <div class="activity-stat">
+                            <span class="stat-value" id="weeklyGoal">75%</span>
+                            <span class="stat-label">Goal Progress</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-chart-container">
+                        <div class="activity-chart" id="activityChart">
+                            <!-- Activity chart will be populated by JavaScript -->
+                        </div>
+                        <div class="activity-legend">
+                            <span class="legend-label">Less</span>
+                            <div class="legend-squares">
+                                <div class="legend-square level-0"></div>
+                                <div class="legend-square level-1"></div>
+                                <div class="legend-square level-2"></div>
+                                <div class="legend-square level-3"></div>
+                                <div class="legend-square level-4"></div>
+                            </div>
+                            <span class="legend-label">More</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-insights" id="activityInsights">
+                        <!-- Dynamic insights will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="achievements-section">
+                <h3>Achievements</h3>
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Achievements will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list" id="activityList">
+                    <!-- Recent activity will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="brand-icon">🧠</span>
+                        <span class="brand-text">CS Flashcards</span>
+                    </div>
+                    <p>Empowering computer science students with effective learning tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="study.html">Start Studying</a></li>
+                        <li><a href="categories.html">Browse Categories</a></li>
+                        <li><a href="progress.html">Track Progress</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="categories.html#algorithms">Algorithms</a></li>
+                        <li><a href="categories.html#data-structures">Data Structures</a></li>
+                        <li><a href="categories.html#programming">Programming</a></li>
+                        <li><a href="categories.html#systems">Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">GitHub</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CS Flashcards. All rights reserved. Built for students, by students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/flashcards-data.js"></script>
+    <script src="js/progress.js"></script>
+</body>
+
+</html>

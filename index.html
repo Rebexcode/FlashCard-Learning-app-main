@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Flashcards - Master Computer Science</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🧠</span>
+                <span class="brand-text">CS Flashcards</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="study.html" class="nav-link">Study</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="manage-cards.html" class="nav-link">Manage Cards</a>
+                <a href="progress.html" class="nav-link">Progress</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Master Computer Science with <span class="highlight">Smart Flashcards</span></h1>
+                <p class="hero-description">
+                    Accelerate your CS learning with our comprehensive flashcard system.
+                    Study algorithms, data structures, programming concepts, and system design
+                    with spaced repetition and progress tracking.
+                </p>
+                <div class="hero-buttons">
+                    <a href="study.html" class="btn btn-primary">Start Studying</a>
+                    <a href="categories.html" class="btn btn-secondary">Browse Topics</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">60+</span>
+                        <span class="stat-label">Flashcards</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Students</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="mini-card">
+                        <h4>Big O Notation</h4>
+                        <p>Time Complexity</p>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="mini-card">
+                        <h4>Binary Search</h4>
+                        <p>O(log n)</p>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="mini-card">
+                        <h4>Hash Tables</h4>
+                        <p>Key-Value Pairs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose CS Flashcards?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Comprehensive Content</h3>
+                    <p>Curated flashcards covering all major CS topics from algorithms to system design.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Learning</h3>
+                    <p>Adaptive spaced repetition algorithm that focuses on your weak areas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Detailed analytics to monitor your learning progress and identify improvement areas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Difficulty Levels</h3>
+                    <p>Cards categorized by difficulty from beginner to advanced concepts.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Study anywhere, anytime with our responsive design that works on all devices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Efficient</h3>
+                    <p>Optimized for quick study sessions that fit into your busy schedule.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">➕</div>
+                    <h3>Create Custom Cards</h3>
+                    <p>Build your personal study collection by adding custom flashcards for any topic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Preview -->
+    <section class="categories-preview">
+        <div class="container">
+            <h2 class="section-title">Study Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="algorithms">
+                    <div class="category-icon">🔄</div>
+                    <h3>Algorithms</h3>
+                    <p>Sorting, searching, graph algorithms, and complexity analysis</p>
+                    <span class="card-count">120 cards</span>
+                </div>
+                <div class="category-card" data-category="data-structures">
+                    <div class="category-icon">🏗️</div>
+                    <h3>Data Structures</h3>
+                    <p>Arrays, trees, graphs, hash tables, and advanced structures</p>
+                    <span class="card-count">95 cards</span>
+                </div>
+                <div class="category-card" data-category="programming">
+                    <div class="category-icon">💻</div>
+                    <h3>Programming</h3>
+                    <p>OOP, design patterns, best practices, and paradigms</p>
+                    <span class="card-count">85 cards</span>
+                </div>
+                <div class="category-card" data-category="systems">
+                    <div class="category-icon">⚙️</div>
+                    <h3>Systems</h3>
+                    <p>Operating systems, networks, databases, and architecture</p>
+                    <span class="card-count">110 cards</span>
+                </div>
+            </div>
+            <div class="categories-cta">
+                <a href="categories.html" class="btn btn-outline">View All Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Level Up Your CS Knowledge?</h2>
+                <p>Join thousands of students who are already mastering computer science concepts with our flashcard
+                    system. Study with our curated collection or create your own custom flashcards.</p>
+                <div class="cta-buttons">
+                    <a href="study.html" class="btn btn-primary btn-large">Start Learning Now</a>
+                    <a href="manage-cards.html" class="btn btn-secondary btn-large">Create Custom Cards</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <span class="brand-icon">🧠</span>
+                        <span class="brand-text">CS Flashcards</span>
+                    </div>
+                    <p>Empowering computer science students with effective learning tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="study.html">Start Studying</a></li>
+                        <li><a href="categories.html">Browse Categories</a></li>
+                        <li><a href="progress.html">Track Progress</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="categories.html#algorithms">Algorithms</a></li>
+                        <li><a href="categories.html#data-structures">Data Structures</a></li>
+                        <li><a href="categories.html#programming">Programming</a></li>
+                        <li><a href="categories.html#systems">Systems</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">GitHub</a></li>
+                        <li><a href="#" target="_blank">Twitter</a></li>
+                        <li><a href="#" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CS Flashcards. All rights reserved. Built for students, by students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
